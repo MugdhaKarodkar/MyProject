@@ -1,0 +1,23 @@
+
+<configuration>
+    <timestamp key="byDay" datePattern="yyyyMMdd'T'HHmmss"/>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<Pattern>%d{HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+		</encoder>
+	</appender>
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+	  <file>D:\ShoppingCartlogs\log-${byDay}.txt</file>
+	    <append>true</append>
+		<encoder>
+			<Pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</Pattern>
+		</encoder>
+	</appender>
+
+	<!--  trace,debug,info,warn,error fatal -->
+	<root level="error">
+		<appender-ref ref="FILE" />
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>
