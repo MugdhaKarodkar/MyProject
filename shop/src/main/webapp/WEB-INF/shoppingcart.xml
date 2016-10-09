@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd">
+
+	<!-- Executed when webFlow is triggered -->
+<!-- 	<on-start> -->
+<!-- 		<evaluate expression="registrationHandler.initFlow()" result="flowScope.userDetails" /> -->
+<!-- 	</on-start> -->
+
+		<view-state id="start" view="showcart" >
+		   <transition on="submit" to="payment" /> 
+	    </view-state>
+	    
+    <view-state id="payment" view="pay"> 
+     <transition on="submit" to="success" /> 
+ 
+  </view-state>
+   <view-state id="success" view="paysuccess"> 
+     <transition on="continue" to="con" /> 
+ 
+  </view-state>
+  
+ 
+   <view-state id="con" view="user"> 
+    
+ 
+  </view-state>
+	    
+	    
+	    
+</flow>
